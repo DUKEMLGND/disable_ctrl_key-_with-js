@@ -1,0 +1,25 @@
+var message = "function disabled";
+    
+    function rtclickcheck(keyp){ if (navigator.appName == "Netscape" && keyp.which == 3){ alert(message); return false; }
+    
+    if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; } }
+    
+    document.onmousedown = rtclickcheck;
+    
+   
+      function mousehandler(e) {
+          var myevent = (isNS) ? e : event;
+          var eventbutton = (isNS) ? myevent.which : myevent.button;
+          if ((eventbutton == 2) || (eventbutton == 3)) return false;
+      }
+      document.addEventListener("keydown", function (event) {
+        if (event.ctrlKey) {
+            event.preventDefault();
+        }   
+    });
+    $(document).ready(function(){
+        $('body').bind('cut copy paste', function (e)
+        {
+           e.preventDefault();
+        });
+     });
